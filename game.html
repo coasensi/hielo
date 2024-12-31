@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Maths</title>
+</head>
+<body>
+    <h1>Question : {{ question }}</h1>
+    <form method="POST">
+        <input type="hidden" name="correct_answer" value="{{ answer }}">
+        <label for="user_answer">Votre réponse :</label>
+        <input type="number" name="user_answer" required autofocus>
+        <button type="submit">Valider</button>
+    </form>
+    <p>Progrès : {{ progress['correct_answers'] }} / {{ progress['total_attempts'] }}</p>
+    <p>Temps restant : {{ time_remaining|int }} secondes.</p>
+</body>
+</html>
